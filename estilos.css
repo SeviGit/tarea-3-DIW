@@ -1,0 +1,649 @@
+
+/* NUESTRAS FUENTES IMPORTADAS */
+
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+        @font-face{
+            font-family:'reseña';
+            src: url('IndieFlower-Regular.ttf');
+           
+        }
+
+/* CONTENEDOR DE PÁGINA PRINCIPAL( pantallas más de 780px) */
+
+        #contenedor_1{
+            margin:30px ;  
+            display:grid;
+            /* Definimos las columnas y filas */
+            grid-template-columns: 40% 40% 20%;
+            grid-template-rows: 110px 50px 355px 200px 200px 80px;
+            /* Definimos la seoaración */
+            grid-gap: 5px;
+            /* Definimos las celdas*/
+            grid-template-areas:    "cabecera cabecera cabecera"
+                                    "nav nav nav"
+                                    "promo  bloque1  bloque2"                        
+                                    "plato1 plato1 bloque2"
+                                    "plato2 plato2 bloque2"
+                                    "pie pie pie"
+        }
+
+/* ====== CABECERA ====== */
+        #cabecera{
+            grid-area:cabecera; 
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;  
+            justify-content: space-between;  
+            align-items: flex-end; 
+            
+        }
+        #logo{
+            width: 20%;
+        }
+
+        #usuario{ 
+            width: 20%;
+            align-self: end;
+            
+        }
+        .usuario{
+            float:right;
+            margin-right: 50px;
+        }
+
+        .usuario:hover{
+            filter: hue-rotate(90deg); 
+            color: green;
+        }
+
+        #nombre{
+            text-align:center; 
+            font-family: 'Acme', sans-serif;
+            font-size: 1.5em;
+            letter-spacing: 8px
+            
+        }
+
+ /* ===== ZONA DE NAVEGACIÓN ===== */
+
+        #nav{
+            grid-area:nav; 
+        }
+
+        #barra{
+        text-align:center;
+        }
+
+         nav a{
+            margin: auto 20px;
+            text-decoration: none;
+            
+            color: rgb(148, 1, 1);
+        }
+        nav a:hover{
+            color: rgb(243, 0, 0);
+        }
+        .enlaces_icon{
+            display: none;
+        }
+
+        .active{
+            border-bottom: 5px solid black;
+            
+        } 
+/* PRUEBAS */
+
+/* .main-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 0.4rem;
+  }
+   */
+  /* .main-logo {
+    color: black;
+    font-size: 32px;
+    text-decoration: none;
+  } */
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+  }
+  
+  .main-nav.show {
+    margin-left: 0;
+  }
+  
+  .nav-links {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* margin-top: 190px; */
+    
+  }
+  
+  .link-item {
+    margin-top: 2rem;
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  /* .link-item::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+  } */
+  
+  .link-item:hover::after {
+    width: 100%;
+  }
+  
+  .button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #444444;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+  }
+  
+  .button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #ffffff;
+  }
+  
+  .button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+  
+  .button-menu.close span:nth-child(3) {
+    display: none;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .button-menu {
+      display: none;
+    }
+  
+    .main-logo {
+      flex-basis: 30%;
+    }
+  
+    .main-nav {
+      position: static;
+      margin-left: 0;
+      flex-basis: 70%;
+      height: 100%;
+    }
+  
+    .nav-links {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      background: white;
+    }
+  
+    .link-item {
+      display: inline-block;
+      margin-top: 0;
+      margin-right: 2rem;
+    }
+  }
+
+/* ==== ZONA DE PROMOCIÓN ==== */
+
+        #promo{
+            grid-area:promo;  
+            text-align: center;
+            font-family: 'Permanent Marker',cursive; 
+            background-image: url('imagenes/fondo_odferta.png');
+            border-radius: 8px;              
+        }
+
+        #oferta{
+            width:300px;
+            border: solid 3px gold;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 15px gold;
+        }
+
+        #oferta:hover{
+            box-shadow: 0 0 20px 20px firebrick;
+        }
+
+        .ofer{
+            font-size: 2.3em;
+            color: rgb(251, 255, 0);
+        }
+
+        p .ofer > span{
+            visibility: hidden;
+            font-size: 0.4em;
+            color: black;   
+        }
+
+        p .ofer:hover > span{
+            visibility: visible;         
+        }
+
+/* ==== BLOQUE 1 (Página principal) ==== */
+
+        .bloque1{
+            grid-area:bloque1;   
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;                              
+            column-count:2;                   
+            column-width: 120px;
+            column-fill: auto;
+            column-gap:30px;
+            padding: 10px;
+            font-family: 'Architects Daughter', cursive;          
+        }
+
+        #local{
+            border:solid 2px firebrick;
+            border-radius: 5px;    
+            height:300px;  
+            z-index: 2;          
+        }
+
+/* ==== BLOQUE 2(Página principal) ==== */
+
+        #bloque2{
+            grid-area:bloque2;  
+            background-color: rgb(251, 252, 229);
+            font-family: 'Architects Daughter', cursive;
+            padding: 10px;
+            z-index: 1;   
+            text-align: center;            
+        }
+
+        #bolas{      
+            border: solid 2px firebrick;
+            border-radius: 3px;
+        }
+
+/* ==== ZONA DE PLATOS ==== */
+
+            #plato1{
+                    grid-area:plato1;
+                    grid-gap: 5px;
+                    display:flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;         
+            }
+
+            #plato2{
+                    grid-area:plato2; 
+                    grid-gap: 5px;
+                    display:flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;                              
+            }
+
+            .plato{
+                width: 25%;
+                text-align: center;
+                background-color: rgb(178, 34,33);
+                border: solid 1px firebrick;            
+            }
+
+            #plato1  div:nth-child(even){
+                background-color: rgba(178, 34,33,0.8);
+            }
+
+            #plato2  div:nth-child(odd){
+                background-color: rgba(178, 34,33,0.8);               
+            } 
+
+            .img_p{
+                background: white;
+                margin-top: 0;
+            }
+            
+            .name{
+            font-size: medium;
+            color: ghostwhite;
+            margin-bottom: 10px;
+            
+            }
+            .precio{
+                font-size: medium;
+                color: rgb(231, 235, 13);
+                margin-top: 0;
+                font-family: 'Permanent Marker',cursive;
+            }
+
+/* ==== PIE DE PÁGINA ==== */
+
+            footer{
+                grid-area:pie; 
+                background-color: rgb(0, 0, 0);
+                display:flex;
+                flex-direction: row;
+                flex-wrap: nowrap;  
+                justify-content: center;  
+                align-items: center; 
+            }
+            #pie-icon{
+                align-items: center;
+            }
+            footer img{
+                margin-right: 20px; 
+                height: 30px;
+            }
+
+                /* ==== PROMOCIONES.HTML ==== */
+/* ==== CONTENEDOR DE PÁGINA POMOCIONES (pantallas más de 780px) ==== */
+
+            #contenedor_2{
+                margin:30px ;  
+                display:grid;
+                /* Definimos las columnas y filas */
+                grid-template-columns: 50% 50% ;
+                grid-template-rows: 110px 50px 700px 80px;
+                /* Definimos la seoaración */
+                grid-gap: 5px;
+                /* Definimos las celdas*/
+                grid-template-areas:    "cabecera cabecera"
+                                        "nave nave"
+                                        "bloque_pro1 bloque_pro2"                        
+                                        "pie pie"
+            }
+
+/* ==== BLOQUE 1 PROMOCIONES ==== */
+
+            #bloque_pro1{
+                grid-area:bloque_pro1;
+                grid-gap: 5px;
+                display:flex;
+                flex-direction: column;
+                flex-wrap: nowrap;   
+                background-image: url('imagenes/fondo_odferta.png');  
+                  
+                 
+            }
+
+            #nombre_pro{
+                text-align: center;
+                font-size: 1.5em;
+                font-family: 'Permanent Marker',cursive; 
+                color: black;
+                letter-spacing: 8px
+            }
+
+            #img_pro1{
+                height: 250px;
+                margin: 0 auto;
+                border: solid 2px firebrick;
+                border-radius: 10px;
+                
+            }
+            #img_pro1:hover{
+                filter:hue-rotate(90deg);
+                
+            }
+
+            .condiciones{
+                padding: 0px 100px;
+                color: rgb(230, 214, 193);
+                margin: 0 auto;
+            }
+            
+
+            #tabla {
+                width:80%; 
+                height: 60%;
+                border-collapse:collapse;  
+                margin: 20px auto; 
+                border: solid 2px rgb(143, 29, 29);
+               
+                
+            } 
+            
+            caption{ 
+                font-family: 'Permanent Marker',cursive; 
+                color: rgb(231, 235, 13);
+                margin-bottom:5px;
+            }
+            th{ 
+                background-color: rgba(255, 255, 255, 0.363);
+                text-transform: uppercase; 
+            }
+
+            tr{
+                border-bottom:solid 2px black;
+            }
+
+            td{
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.295);
+                
+             }  
+             
+             tr td:nth-of-type(1){
+                text-align: left;
+                font-weight: 800;
+                border-bottom:solid 2px rgb(143, 29, 29); ;
+                background-color: rgba(180, 179, 179, 0.534);}
+
+                
+
+            .btn{
+                background-color:rgb(161, 15, 15);
+                padding: 5px;
+                border: solid 1px black;
+                height: 100%;
+                width: 100%;
+                border-radius: 2px;
+            }
+            .btn:hover{
+                background-color: rgb(218, 47, 47);
+            }
+            .sin{
+                color: black;
+            }
+           
+            #tabla .total1{
+                border-radius: 3px;
+                background-color: rgb(105, 102, 102);
+               color: black;
+              
+              
+            }
+            #tabla .total2{
+                border-radius: 3px;
+                background-color: rgb(240, 224, 85);
+                 
+                color: red;
+        }
+             
+           
+
+/* ==== BLOQUE 2 PROMOCIONES ==== */
+
+            #bloque_pro2{
+                grid-area:bloque_pro2;
+                grid-gap: 5px;
+                display:flex;
+                flex-direction: column;
+                flex-wrap: nowrap; 
+                background-image: url('imagenes/fondo_odferta.png');   
+            }
+
+            #nombre_pro2{
+                font-size: 1.5em;
+                text-align: center;
+                font-family: 'Permanent Marker',cursive; 
+                color: black;
+                letter-spacing: 3px;
+            }
+
+            .sombra{
+                text-shadow: 2px 2px 2px blue;
+                margin-bottom: 0;
+                text-align: center;
+            }
+            #reseña{
+                padding: 20px 60px;
+                font-family:'reseña';
+                background-color: rgba(198, 214, 109, 0.678);
+                margin: 20px 35px;
+                text-align: center;
+                border: solid 2px rgb(65, 26, 0);
+                border-radius: 10px;  
+            }
+
+            .titulo{
+                text-align: center;
+                font-family: 'Permanent Marker',cursive; 
+                font-size: 1.2em;
+                color: black;
+                letter-spacing: 7px;
+                color:rgb(231, 235, 13);
+                text-shadow: 2px 2px 2px blue;
+                margin-top: 30px;
+            }
+            .img_pro2{
+                width:100px;
+                margin: 0 20px ;
+                border: solid 2px firebrick;
+                border-radius: 10px; 
+            }
+
+            .pizza{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap; 
+
+            }
+            .pizz{
+                font-family: 'Permanent Marker',cursive; 
+                color: black;
+                letter-spacing: 7px;
+                color:rgb(212, 212, 212);
+                margin-top: 35px;
+            }
+            
+            
+
+
+
+                /* PANTALLAS DE MENOS DE 780PX */
+/* ====================================================================== */
+
+
+@media (max-width: 780px) {
+
+        #contenedor_1{
+    
+    display:grid;
+    /* Definimos las columnas y filas */
+    grid-template-columns: 100%;
+    grid-template-rows: 110px 50px 350px 350px 850px  80px;
+    /* Definimos la separación */
+    grid-gap: 5px;
+    /* Definimos las celdas*/
+    grid-template-areas:    "cabecera"
+                            "nave"
+                            "promo "
+                            "bloque1 "
+                            "plato1"                         
+                            "pie"
+}
+
+
+.enlaces_nav{
+    display: none;
+}
+.enlaces_icon{
+    display:initial;
+    
+}
+.icon{
+    height: 25px;
+}
+
+
+#plato1{
+        grid-area:plato1;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: nowrap;   
+}
+#plato2{
+    display: none;
+}
+
+.plato{
+    width: 100%;
+    height: 200px;
+}
+
+#bloque2 {
+    display: none;
+}
+
+#bloque_pro2{
+    display: none;
+}
+
+#contenedor_2{
+    margin:30px ;  
+    display:grid;
+    /* Definimos las columnas y filas */
+    grid-template-columns: 100% ;
+    grid-template-rows: 110px 50px 700px 80px;
+    /* Definimos la seoaración */
+    grid-gap: 5px;
+    /* Definimos las celdas*/
+    grid-template-areas:    "cabecera "
+                            "nave "
+                            "bloque_pro1"                        
+                            "pie "
+}
+
+}
